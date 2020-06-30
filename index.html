@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Alex-Raabe-Massage-Parlor</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+  </head>
+  <body style="overflow-y:scroll">
+    <ion-button>Click Me to make an appointment!!</ion-button>
+    <h1 id='site-title' style="text-align:center; color:#3ac793; font-family: 'Yellowtail', cursive; font-size: 40px"><span style="font-family:cursive; font-size: 24px">Hello and welcome to:</span><br> Alex J Raabe's Massage Parlor</h1>
+    <script type="text/javascript">
+      //getElementsByTagName creates collection
+      var firstButton = document.getElementsByTagName('ion-button');
+      var siteTitleElement = document.getElementById('site-title');
+          firstButton[0].addEventListener('click', () => {
+            console.log('clicked')
+            var newDiv = document.createElement('div');
+            newDiv.style.cssText =  'overflow:auto; text-align:center; color:#de9918';
+            var newContent = document.createTextNode("Appointment made!");
+            newDiv.appendChild(newContent);
+            //append after title
+            document.body.insertBefore(newDiv,siteTitleElement.nextSibling);
+          });
+    </script>
+  </body>
+</html>
