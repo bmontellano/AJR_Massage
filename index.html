@@ -8,6 +8,7 @@
     <link rel="icon" type="image/svg" href="https://www.iconbolt.com/iconsets/streamline-emoji/raised-hand-2.svg" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+    <script src="./index.js" defer></script>
   </head>
   <body>
     <ion-app>
@@ -20,16 +21,25 @@
       </ion-header>
       <ion-content>
         <ion-item>
-          <ion-label position="floating">User Height</ion-label>
-          <ion-input></ion-input>
+          <ion-label position="floating">Full Name</ion-label>
+          <ion-input id='name-input'></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">User Weight</ion-label>
-          <ion-input></ion-input>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input id='email-input'></ion-input>
         </ion-item>
-        <ion-button>Click Me to make an appointment!!</ion-button>
+        <ion-item>
+          <ion-label position="floating">Phone Number</ion-label>
+          <ion-input id='phonenumber-input'></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Type of Massage</ion-label>
+          <ion-input id='massage-input'></ion-input>
+        </ion-item>
+        <div style="text-align:center">
+          <ion-button>Click Me to make an appointment!!</ion-button>
+        </div>
       </ion-content>
     </ion-app>
-    <script src="./index.js"></script>
   </body>
 </html>
