@@ -10,8 +10,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
   </head>
   <body>
-    <ion-button>Click Me to make an appointment!!</ion-button>
-    <h1 id='site-title' style="text-align:center; color:#3ac793; font-family: 'Yellowtail', cursive; font-size: 40px"><span style="font-family:cursive; font-size: 24px">Hello and welcome to:</span><br> Alex J Raabe's Massage Parlor</h1>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>
+            <h1 id='site-title' style="text-align:center; color:#3ac793; font-family: 'Yellowtail', cursive; font-size: 40px"><span style="font-family:cursive; font-size: 24px">Hello and welcome to:</span><br> Alex J Raabe's Massage Parlor</h1>
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-item>
+          <ion-label position="floating">User Height</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">User Weight</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-button>Click Me to make an appointment!!</ion-button>
+      </ion-content>
+    </ion-app>
     <script src="./index.js"></script>
   </body>
 </html>

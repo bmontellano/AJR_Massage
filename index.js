@@ -6,7 +6,7 @@ var counter = 0;
 
 //clicking button adds element and removes it
 firstButton.addEventListener('click', () => {
-  if (counter = 0) {
+  if (counter === 0) {
     //current time
     var currentTime = new Date();
     var milliTime = currentTime.getTime();
@@ -22,7 +22,7 @@ firstButton.addEventListener('click', () => {
   var newContent = document.createTextNode("Appointment made!");
   newDiv.appendChild(newContent);
   //append after title
-  document.body.insertBefore(newDiv,siteTitleElement.nextSibling);
+  siteTitleElement.appendChild(newDiv);
   //remove child after 3 secs
   setTimeout(() => {
     newDiv.parentNode.removeChild(newDiv);
