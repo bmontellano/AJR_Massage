@@ -8,6 +8,7 @@
     <link rel="icon" type="image/svg" href="https://www.iconbolt.com/iconsets/streamline-emoji/raised-hand-2.svg" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <script src="./index.js" defer></script>
   </head>
   <body>
@@ -15,30 +16,42 @@
       <ion-header>
         <ion-toolbar>
           <ion-title>
-            <h1 id='site-title' style="text-align:center; color:#3ac793; font-family: 'Yellowtail', cursive; font-size: 40px"><span style="font-family:cursive; font-size: 24px">Hello and welcome to:</span><br> Alex J Raabe's Massage Parlor</h1>
+            <h1 id='site-title' style="text-align:center; color:#3ac793; font-family: 'Yellowtail', cursive; font-size: 60px"><span style="font-family:cursive; font-size: 44px">Hello and welcome to:</span><br> Alex Raabe Massage Scheduler</h1>
           </ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content>
-        <ion-item>
-          <ion-label position="floating">Full Name</ion-label>
-          <ion-input id='name-input'></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Email</ion-label>
-          <ion-input id='email-input'></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Phone Number</ion-label>
-          <ion-input id='phonenumber-input'></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Type of Massage</ion-label>
-          <ion-input id='massage-input'></ion-input>
-        </ion-item>
-        <div style="text-align:center">
-          <ion-button>Click Me to make an appointment!!</ion-button>
-        </div>
+      <ion-content fullscreen>
+          <ion-item>
+            <ion-label position="floating">First Name</ion-label>
+            <ion-input id='firstName-input'></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Last Name</ion-label>
+            <ion-input id='lastName-input'></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input id='email-input'></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Phone Number</ion-label>
+            <ion-input id='phonenumber-input'></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Type of Massage</ion-label>
+            <ion-select id='massage-input' interface="popover">
+              <ion-select-option value="Swedish">Swedish $80 - duration: 30 min</ion-select-option>
+              <ion-select-option value="Deep-tissue">Deep Tissue $120 - duration: 1 hr</ion-select-option>
+              <ion-select-option value="Pregos">Pregos $150 - duration: 1hr</ion-select-option>
+              <ion-select-option value="Feel-good">Feel good massage $300 - duration: 1hr</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <div style="text-align:center">
+            <ion-button>Make an appointment</ion-button>
+          </div>
+          <div>
+            <p style="font-family: 'Roboto Mono', monospace; padding:30px 30px 30px 30px">CMATC Certified and Insured - #83792</p>
+          </div>
       </ion-content>
     </ion-app>
   </body>
