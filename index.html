@@ -10,34 +10,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <script src="./index.js" defer></script>
+    <style>
+      ion-item {padding:20px}
+    </style>
   </head>
   <body>
-    <ion-app style="padding:50px">
+    <ion-app style="padding:30px">
       <ion-header>
         <ion-toolbar>
           <ion-title>
-            <h1 id='site-title' style="text-align:center; color:#3ac793; font-family: 'Yellowtail', cursive; font-size: 60px"><span style="font-family:cursive; font-size: 44px">Hello and welcome to:</span><br> Alex Raabe Massage Scheduler</h1>
+            <h1 id='site-title' style="text-align:center; color:#3ac793; font-family: 'Yellowtail', cursive; font-size: 50px"><span style="font-family:cursive; font-size: 34px">Hello and welcome to:</span><br> Alex Raabe Massage Scheduler</h1>
           </ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content>
-          <ion-item style="padding:30px">
+          <ion-item>
             <ion-label position="floating">First Name</ion-label>
             <ion-input id='firstName-input'></ion-input>
           </ion-item>
-          <ion-item style="padding:30px">
+          <ion-item>
             <ion-label position="floating">Last Name</ion-label>
             <ion-input id='lastName-input'></ion-input>
           </ion-item>
-          <ion-item style="padding:30px">
+          <ion-item>
             <ion-label position="floating">Email</ion-label>
             <ion-input id='email-input'></ion-input>
           </ion-item>
-          <ion-item style="padding:30px">
+          <ion-item>
             <ion-label position="floating">Phone Number</ion-label>
             <ion-input id='phonenumber-input'></ion-input>
           </ion-item>
-          <ion-item style="padding:30px">
+          <ion-item>
             <ion-label>Type of Massage (Prices based per hour, unless specified)</ion-label>
             <ion-select id='massage-input' ok-text="OK" cancel-text="Cancel">
               <ion-select-option value="Swedish">Swedish $70</ion-select-option>
@@ -49,6 +52,17 @@
               <ion-select-option value="Chair">Chair $25 / 20min</ion-select-option>
             </ion-select>
           </ion-item>
+          <ion-item>
+           <ion-label>Time</ion-label>
+           <ion-select placeholder="Specify massage duration">
+             <ion-select-option value="1Hr">1 Hour appt</ion-select-option>
+             <ion-select-option value="30min">30 min appt</ion-select-option>
+           </ion-select>
+         </ion-item>
+         <ion-item>
+          <ion-label>MM DD YY</ion-label>
+          <ion-datetime display-format="MM DD YY" placeholder="Select Date"></ion-datetime>
+        </ion-item>
           <div style="text-align:center">
             <ion-button>Make an appointment</ion-button>
           </div>

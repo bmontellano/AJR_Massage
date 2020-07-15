@@ -7,7 +7,7 @@ const firstButton = document.querySelector('ion-button'),
       emailInput = document.getElementById('email-input'),
       phoneNumberInput = document.getElementById('phonenumber-input'),
       massageInput = document.getElementById('massage-input'),
-      emailRegex = RegExp('@gmail.com$|@yahoo.com$|@msn.com$|@hotmail.com$|@aol.com$|@icloud.com$|@me.com$|@mac.com$');
+      emailRegex = RegExp('@gmail.com$|@yahoo.com$|@msn.com$|@hotmail.com$|@aol.com$|@icloud.com$|@me.com$|@mac.com$|.edu$');
 
 
 var counter = 0,
@@ -24,7 +24,7 @@ firstAction = () => {
   } else if (phoneNumberInput.value === ''  && emailInput.value === '' ){
     alert('Phone Number or Email must be provided');
     return;
-  } else if (phoneNumberInput.value.length > 0 && phoneNumberInput.value.length !== 7) {
+  } else if (phoneNumberInput.value.length > 0 && phoneNumberInput.value.length !== 10) {
     alert('Please enter a valid phone number');
     return;
   } else if(emailInput.value.length > 0 && !emailRegex.test(emailInput.value)) {
