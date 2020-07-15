@@ -1,6 +1,6 @@
 // INIT Jacvascript
 //getElementsByTagName creates collection
-const firstButton = document.querySelector('ion-button'),
+const firstButton = document.getElementById('primary-ion-button'),
       siteTitleElement = document.getElementById('site-title'),
       firstNameInput = document.getElementById('firstName-input'),
       lastNameInput = document.getElementById('lastName-input'),
