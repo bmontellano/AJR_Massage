@@ -1,7 +1,6 @@
 // INIT Jacvascript
-
 // Handles modal and init logic
-customElements.define('modal-content1', class ModalContent extends HTMLElement {
+customElements.define('modal-appointment', class ModalContent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <ion-header translucent>
@@ -71,7 +70,7 @@ customElements.define('modal-content1', class ModalContent extends HTMLElement {
      `;
   }
 });
-customElements.define('modal-content2', class ModalContent extends HTMLElement {
+customElements.define('modal-about-me', class ModalContent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <ion-header translucent>
@@ -84,54 +83,108 @@ customElements.define('modal-content2', class ModalContent extends HTMLElement {
     </ion-header>
     <ion-content fullscreen>
     <ion-item class='ion-text-center'>
-    <div> Hi, I'm Alex Raabe...nothin' else to add really</div>
+    <div> Hi, I'm Alex Raabe... Details coming soon</div>
     </ion-item>
     </ion-content>
      `;
   }
 });
-customElements.define('modal-content3', class ModalContent extends HTMLElement {
+customElements.define('modal-massage-description', class ModalContent extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <ion-header translucent>
       <ion-toolbar>
-        <ion-title>The Art of Massage: Types</ion-title>
+        <ion-title style="color:#03b6fc">Types of Massage</ion-title>
         <ion-buttons slot="end">
           <ion-button onclick="dismissModal()">Close</ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
     <ion-content fullscreen>
-      <ion-item class='ion-text-center'>
-        <div> Hi, I'm Alex Raabe. These are the different massages I offer</div>
-      </ion-item>
-      <ion-item class='ion-text-center'>
-        <div> Hard-bod: I want your bod</div>
-      </ion-item>
-      <ion-item class='ion-text-center'>
-        <div> Medium-bod: I still want your bod</div>
-      </ion-item>
-      <ion-item class='ion-text-center'>
-        <div> Soft-bod: Gimme that bod</div>
-      </ion-item>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle style="color:black; font-weight:900">Prices based upon per hour appointment</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Swedish</ion-card-title>
+          <ion-card-subtitle>$70</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Relaxation massage with therapeutic benefits of touch therapy. (Recommended before trying Deep Tissue)
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Deep Tissue</ion-card-title>
+          <ion-card-subtitle>$120</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Hard Pressure massage for deep seeded muscle issues and prolonged pain.
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Sport</ion-card-title>
+          <ion-card-subtitle>$90</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Sport injury prevention and maintenance includes assisted stretching and certain muscle focus.
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Lomi-Lomi</ion-card-title>
+          <ion-card-subtitle>$80</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Traditional Hawaiian massage using oil and dance technique.
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Pregnancy and Infant</ion-card-title>
+          <ion-card-subtitle>$100</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Massage specialized for pregnancy pains and Mother’s relaxation. Massage training for you to perform on your child upon request.
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Chakra</ion-card-title>
+          <ion-card-subtitle>$40/30 min</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Energy balancing for your peace of mind.
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Chair</ion-card-title>
+          <ion-card-subtitle>$25/20 min</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          For a quick, short massage without the need to remove clothing. Great massage for before or after a meeting.
+        </ion-card-content>
+      </ion-card>
     </ion-content>
      `;
   }
 });
-
 
 let currentModal = null;
 const appointmentButton = document.getElementById('appointment-button'),
       aboutMeButton = document.getElementById('about-me-button'),
       artMassageButton = document.getElementById('art-massage-button');
 
-appointmentButton.addEventListener('click', createModal1);
-aboutMeButton.addEventListener('click', createModal2);
-artMassageButton.addEventListener('click', createModal3);
+appointmentButton.addEventListener('click', createModalAppointment);
+aboutMeButton.addEventListener('click', createModalAboutMe);
+artMassageButton.addEventListener('click', createModalMassageDescription);
 
-async function createModal1() {
+async function createModalAppointment() {
   const modal = await modalController.create({
-    component: 'modal-content1'
+    component: 'modal-appointment'
   });
 
   await modal.present();
@@ -221,9 +274,9 @@ async function createModal1() {
   resetButton.addEventListener('click', resetInput);
 }
 
-async function createModal2() {
+async function createModalAboutMe() {
   const modal = await modalController.create({
-    component: 'modal-content2'
+    component: 'modal-about-me'
   });
 
   await modal.present();
@@ -231,13 +284,13 @@ async function createModal2() {
 
 }
 
-async function createModal3() {
+async function createModalMassageDescription() {
   const modal = await modalController.create({
-    component: 'modal-content3'
+    component: 'modal-massage-description'
   });
 
   await modal.present();
-  currentModal = modal;
+  currentModal = modal;``
 
 }
 
