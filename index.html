@@ -1,102 +1,93 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex-Raabe-Massage</title>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-    <link rel="icon" type="image/svg" href="https://www.iconbolt.com/iconsets/streamline-emoji/raised-hand-2.svg" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-    <script src="./index.js" defer></script>
-    <style>
-      ion-app{
-        padding: 0px 5px 0px 5px
-      }
-      ion-header {
-        padding:0px;
-        margin: 0px;
-      }
-      ion-item {
-        padding:5px;
-      }
-      ion-note{
-        font-family: 'Roboto Mono', monospace;
-        padding:15px;
-        font-weight: 900;
-        font-size:16px;
-      }
-      h1 {
-        margin:0px;
-        padding: 5px 0px 5px 0px;
-      }
-      #primary-ion-button {
-        padding-left: 70px;
-        padding-right: 16px;
-        margin-top: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <ion-app>
-      <ion-header>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex-Raabe-Massage</title>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="icon" type="image/svg" href="https://www.iconbolt.com/iconsets/streamline-emoji/raised-hand-2.svg" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <script type="module">
+    import {
+      modalController
+    } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
+    window.modalController = modalController;
+  </script>
+  <script src="./index.js" defer></script>
+  <style>
+    ion-header {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    #footer {
+      font-family: 'Roboto Mono', monospace;
+      padding: 15px;
+      font-weight: 900;
+      font-size: 14.5px;
+    }
+
+    h1 {
+      margin: 0px;
+      padding: 5px 0px 5px 0px;
+    }
+
+    #massage-input,
+    #duration-input {
+      font-size: 13px;
+      font-weight: 800;
+    }
+  </style>
+</head>
+
+<body>
+  <!--
+  GHOST STYLE GRAVESITE
+  .alert-radio-label.sc-ion-alert-md {
+    font-size: 12px;
+    font-weight: 800;
+  }
+-->
+  <ion-app>
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-title>
+          <h1 id='site-title' style="text-align:center; color:#3ac793; font-family: 'Yellowtail', cursive; font-size: 30px"><span style="font-family:cursive; font-size: 16px;">Hello and welcome to:</span><br>Alex Raabe Massage Scheduler</h1>
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content fullscreen class="ion-padding">
+      <ion-grid class="ion-text-center ion-margin">
+        <ion-row>
+          <ion-col>
+            <ion-button id="appointment-button" expand="block">Make Appointment</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button id="about-me-button" expand="block" color='warning'>About Me </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button id="art-massage-button" expand="block" color='secondary'>The Art of Massage</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-footer class="ion-no-border">
         <ion-toolbar>
-          <ion-title>
-            <h1 id='site-title' style="text-align:center; color:#3ac793; font-family: 'Yellowtail', cursive; font-size: 30px"><span style="font-family:cursive; font-size: 16px;">Hello and welcome to:</span><br>Alex Raabe Massage Scheduler</h1>
-          </ion-title>
+          <ion-title id="footer">CMATC Certified and Insured - #83792</ion-title>
         </ion-toolbar>
-      </ion-header>
-      <ion-content>
-          <ion-item>
-            <ion-label position="floating">First Name</ion-label>
-            <ion-input id='firstName-input'></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Last Name</ion-label>
-            <ion-input id='lastName-input'></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Email</ion-label>
-            <ion-input id='email-input'></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Phone Number</ion-label>
-            <ion-input id='phonenumber-input'></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label>Type of Massage<br>(Prices based per hour, unless specified)</ion-label>
-            <ion-select id='massage-input' ok-text="OK" cancel-text="Cancel" placeholder="">
-              <ion-select-option value="Swedish">Swedish $70</ion-select-option>
-              <ion-select-option value="Deep-tissue">Deep Tissue $120</ion-select-option>
-              <ion-select-option value="Sport">Sport $90</ion-select-option>
-              <ion-select-option value="Lomi-Lomi">Lomi-Lomi $80</ion-select-option>
-              <ion-select-option value="Pregnancy-Infant">Pregnancy & Infant $100</ion-select-option>
-              <ion-select-option value="Chakra">Chakra $40 / 30min</ion-select-option>
-              <ion-select-option value="Chair">Chair $25 / 20min</ion-select-option>
-            </ion-select>
-          </ion-item>
-          <ion-item>
-           <ion-label>Duration</ion-label>
-           <ion-select placeholder="1hr or 30min">
-             <ion-select-option value="1Hr">1 Hour appt</ion-select-option>
-             <ion-select-option value="30min">30 min appt</ion-select-option>
-           </ion-select>
-          </ion-item>
-          <ion-item>
-            <ion-label>Date</ion-label>
-            <ion-datetime placeholder="Select Date"></ion-datetime>
-          </ion-item>
-          <ion-item>
-            <ion-label>Time</ion-label>
-            <ion-datetime display-format="h:mm A" picker-format="h:mm A" placeholder="Select Time"></ion-datetime>
-          </ion-item>
-          <ion-button id="primary-ion-button">Make an appointment</ion-button>
-          <ion-item>
-            <ion-note>CMATC Certified and Insured - #83792</ion-note>
-          </ion-item>
-      </ion-content>
-    </ion-app>
-  </body>
+      </ion-footer>
+    </ion-content>
+  </ion-app>
+
+</body>
+
+
+
 </html>
